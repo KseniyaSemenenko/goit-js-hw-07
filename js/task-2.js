@@ -26,17 +26,14 @@ const images = [
 ];
 
 const createGallery = pictureInf => {
-
-    
     const li = document.createElement("li");
-    document.querySelector("ul").append(li);
     const img = document.createElement("img");
     img.src = pictureInf.url;
     img.alt = pictureInf.alt;
   li.append(img);
   return li;
-  
 }
 const galleryArr = images.map(imgInfo => createGallery(imgInfo));
 
 const galleryList = document.querySelector(".gallery");
+galleryList.append(...galleryArr);
